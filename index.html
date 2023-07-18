@@ -16,9 +16,12 @@
     />
   </head>
   <body>
+    <!-- Main containere -->
     <div id="fullpage">
+      <!-- START hero section -->
       <div class="section hero-section">
         <form class="container" action="#">
+          <h1 class="hero-header">Books</h1>
           <input
             placeholder="im an input!"
             class="input"
@@ -28,9 +31,60 @@
           <button class="button" type="submit">submit</button>
         </form>
       </div>
+      <!-- END hero section -->
 
-      <div class="section books-section">Some section</div>
+      <!-- START books section -->
+      <div class="section fp-auto-height-responsive books-section">
+        <div class="slide">
+          <div class="card">
+            <div class="image"></div>
+            <div class="content">
+              <a href="#">
+                <span class="title">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </span>
+              </a>
+
+              <p class="desc">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Recusandae dolores, possimus pariatur animi temporibus nesciunt
+                praesentium
+              </p>
+
+              <a class="action" href="#">
+                Find out more
+                <span aria-hidden="true"> → </span>
+              </a>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="card">
+              <div class="image"></div>
+              <div class="content">
+                <a href="#">
+                  <span class="title">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </span>
+                </a>
+
+                <p class="desc">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Recusandae dolores, possimus pariatur animi temporibus
+                  nesciunt praesentium
+                </p>
+
+                <a class="action" href="#">
+                  Find out more
+                  <span aria-hidden="true"> → </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END books section -->
     </div>
+
     <!-- FullPage CDN link js -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"

@@ -1,8 +1,12 @@
-// fulpage configuration object
+// Fulpage configuration object
 new fullpage("#fullpage", {
-  //options here
   autoScrolling: true,
   scrollHorizontally: true,
+  navigation: true,
+  css3: true,
+  loopHorizontal: true,
+  fitToSection: true,
+  keyboardScrolling: true,
 });
 
 export default fullpage();
