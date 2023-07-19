@@ -23,9 +23,8 @@ function getData(search) {
 }
 
 function displayData(response) {
-  const booksData = response.docs;
-  console.log(booksData);
+  const data = response.docs;
+  console.log(data);
 }
 
-// Initial call
 displayData();
