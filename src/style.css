@@ -39,7 +39,7 @@
   margin-bottom: 3px;
 }
 
-.input {
+.search-bar {
   border-radius: 8px;
   padding: 7px 16px;
   box-shadow: rgba(77, 79, 82, 0.2) 0px 8px 24px;
@@ -49,23 +49,23 @@
   transition: 0.5s ease;
 }
 
-.input:hover {
+.search-bar:hover {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-color: rgb(138, 175, 255);
 }
 
-.input:focus {
+.search-bar:focus {
   border: 2px solid rgb(57, 120, 255);
   box-shadow: rgba(133, 130, 130, 0.1) 0px 4px 12px;
   transform: scale(0.99);
 }
 
-.input::placeholder {
+.search-bar::placeholder {
   font-size: 13px;
   font-weight: 600;
 }
 
-.button {
+.btn-search {
   padding: 6px 15px;
   text-align: center;
   color: rgb(95, 87, 87);
@@ -82,7 +82,7 @@
     rgba(49, 42, 42, 0.06) 0px 2px 4px -1px;
 }
 
-.button:hover {
+.btn-search:hover {
   border-radius: 7px;
   background-color: rgb(243, 242, 242);
   border-color: rgb(236, 232, 232);

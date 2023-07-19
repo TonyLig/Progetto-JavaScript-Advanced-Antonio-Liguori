@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
     <!-- css Link -->
-    <link rel="stylesheet" href="./src/style.css" />
+    <!-- <link rel="stylesheet" href="./src/style.css" /> -->
     <!-- FullPage CDN link css -->
     <link
       rel="stylesheet"
@@ -20,21 +20,21 @@
     <div id="fullpage">
       <!-- START hero section -->
       <div class="section hero-section">
-        <form class="container" action="#">
+        <form class="container">
           <h1 class="hero-header">Books</h1>
           <input
             placeholder="im an input!"
-            class="input"
+            class="search-bar"
             name="text"
             type="text"
           />
-          <button class="button" type="submit">submit</button>
+          <button class="btn-search" type="submit">Search</button>
         </form>
       </div>
       <!-- END hero section -->
 
       <!-- START books section -->
-      <div class="section fp-auto-height-responsive books-section">
+      <div class="section books-section">
         <div class="slide">
           <div class="card">
             <div class="image"></div>
@@ -57,29 +57,6 @@
               </a>
             </div>
           </div>
-          <div class="slide">
-            <div class="card">
-              <div class="image"></div>
-              <div class="content">
-                <a href="#">
-                  <span class="title">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </span>
-                </a>
-
-                <p class="desc">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Recusandae dolores, possimus pariatur animi temporibus
-                  nesciunt praesentium
-                </p>
-
-                <a class="action" href="#">
-                  Find out more
-                  <span aria-hidden="true"> → </span>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <!-- END books section -->
@@ -89,6 +66,12 @@
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"
       integrity="sha512-LGiXf+jHGTHcIybSsOWO3I/in+OObCkcEsWIZ7IyhzfD6RzD5qDUw2CK+JveuI7zTSEcDG//bIOvOpAJW2BWsg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.extensions.min.js"
+      integrity="sha512-i0+IGP2OBJG5Lioj9FaBr30x7Ci39dWQb8BhSd8J86p48OgctpfXXq0hG6cmCbCkKh4tn335pz9b3seChGFdKw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>

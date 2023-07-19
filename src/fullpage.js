@@ -7,6 +7,7 @@ new fullpage("#fullpage", {
   loopHorizontal: true,
   fitToSection: true,
   keyboardScrolling: true,
+  licenseKey: "gplv3-license",
 });
 
 export default fullpage();
