@@ -15,11 +15,12 @@ export function displayData(response) {
     const findAuthor = book.author_name
       ? book.author_name[0]
       : "Author not found.";
-    const coverUrl = `https://covers.openlibrary.org/b/id/+${book.cover_i}+-M.jpg`;
+    const coverUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
     const coverImage = book.cover_i
-      ? `${coverUrl}+alt="Copertina del libro" book-key=+${bookKey}`
-      : `https://picsum.photos/seed/picsum/200/300" book-key=+${bookKey}`;
+      ? `${coverUrl}`
+      : `https://picsum.photos/id/777/500/500`;
 
+    // Append Card
     const bookSection = document.getElementById("books-section");
 
     const makeSlide = document.createElement("div");
@@ -32,7 +33,8 @@ export function displayData(response) {
 
     const makeImg = document.createElement("img");
     makeImg.className = "bk-cover";
-    makeImg.src = coverUrl;
+    makeImg.src = coverImage;
+    makeImg.alt = findTitle;
     makeCard.appendChild(makeImg);
 
     const makeContent = document.createElement("div");
@@ -46,17 +48,20 @@ export function displayData(response) {
 
     const makeAuthor = document.createElement("p");
     makeAuthor.className = "author";
+    makeAuthor.appendChild(document.createTextNode(findAuthor));
     makeContent.appendChild(makeAuthor);
 
     const makeModal = document.createElement("dialog");
-    makeModal.setAttribute("id", "book-modal");
+    makeModal.className = "book-modal";
+    makeModal.setAttribute("id", "modal");
     makeContent.appendChild(makeModal);
 
     const makeBtn = document.createElement("button");
     makeBtn.className = "modal-button";
-    makeBtn.setAttribute("id", "modal-button");
+    makeBtn.setAttribute("id", "open-button");
+    makeBtn.appendChild(document.createTextNode("Learn More"));
     makeContent.appendChild(makeBtn);
 
-    console.log(data);
+    console.log(book);
   }
 }
