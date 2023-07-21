@@ -4,6 +4,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* for develop DELET IN PRODACTION */
+.fp-arrow {
+  background-color: #2563eb;
+}
 
 /* START Global style */
 .hero-header {
@@ -114,6 +118,7 @@
   background-color: rgb(239, 205, 255);
   border-radius: 10px 10px 0 0;
   border: none;
+  z-index: 999;
 }
 
 .title {
@@ -130,7 +135,7 @@
   line-height: 1.25rem;
 }
 
-.action {
+.modal-button {
   display: inline-flex;
   margin-top: 1rem;
   color: #ffffff;
@@ -144,11 +149,11 @@
   border-radius: 4px;
 }
 
-.action span {
+.modal-button span {
   transition: 0.3s ease;
 }
 
-.action:hover span {
+.modal-button:hover span {
   transform: translateX(4px);
 }
 /* END Card style */
