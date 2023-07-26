@@ -5,12 +5,16 @@ import { displayData } from "./display-data";
 // Element selection
 const searchInput = document.querySelector(".search-bar");
 const btnSearch = document.querySelector(".btn-search");
+
 const modal = document.getElementById("modal");
-const btnOpenModal = document.getElementById("open-button");
-const btnCloseModal = document.querySelector(".close-modal");
+const closeModal = document.querySelector(".close-modal");
 
 // Add Event
 btnSearch.addEventListener("click", getInput);
+
+closeModal.addEventListener("click", () => {
+  modal.close();
+});
 
 // Function to get the input
 function getInput(event) {
@@ -25,8 +29,3 @@ function getData(search) {
     .then((response) => response.json())
     .then(displayData);
 }
-
-// Modal
-btnOpenModal.addEventListener("click", () => {
-  modal.showModal();
-});

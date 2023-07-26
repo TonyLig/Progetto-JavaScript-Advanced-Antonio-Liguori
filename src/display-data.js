@@ -10,6 +10,8 @@ export function displayData(response) {
   // Create card
   function createCard(book) {
     // Target data
+    const modal = document.getElementById("modal");
+
     const findTitle = book.title;
     const bookKey = book.key;
     const findAuthor = book.author_name
@@ -51,17 +53,33 @@ export function displayData(response) {
     makeAuthor.appendChild(document.createTextNode(findAuthor));
     makeContent.appendChild(makeAuthor);
 
-    const makeModal = document.createElement("dialog");
-    makeModal.className = "book-modal";
-    makeModal.setAttribute("id", "modal");
-    makeContent.appendChild(makeModal);
-
+    //Button open modal
     const makeBtn = document.createElement("button");
     makeBtn.className = "modal-button";
     makeBtn.setAttribute("id", "open-button");
     makeBtn.appendChild(document.createTextNode("Learn More"));
     makeContent.appendChild(makeBtn);
 
-    console.log(book);
+    //Retrive book description
+    makeBtn.addEventListener("click", () => {
+      //Fetch API
+      const descriptionUrl = `https://openlibrary.org${bookKey}.json`;
+      fetch(descriptionUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          let description = "Non si lallera con i lalleri";
+          if (data) {
+            if (typeof data === "object") {
+              description = data.description.value || description;
+            } else if (typeof data === "string") {
+              description = data.description || description;
+            }
+          }
+          modal.appendChild(document.createTextNode(description));
+          console.log(data.key);
+          console.log(data);
+        });
+      modal.showModal();
+    });
   }
 }
