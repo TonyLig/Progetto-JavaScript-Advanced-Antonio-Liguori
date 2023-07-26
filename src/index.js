@@ -27,5 +27,8 @@ function getData(search) {
   const apiUrl = `https://openlibrary.org/search.json?q=${search}`;
   fetch(apiUrl)
     .then((response) => response.json())
-    .then(displayData);
+    .then(displayData)
+    .catch((error) => {
+      console.error(error);
+    });
 }

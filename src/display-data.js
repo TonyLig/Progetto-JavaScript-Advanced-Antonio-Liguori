@@ -11,7 +11,7 @@ export function displayData(response) {
   function createCard(book) {
     // Target data
     const modal = document.getElementById("modal");
-
+    const modalParagraph = document.querySelector(".text-modal");
     const findTitle = book.title;
     const bookKey = book.key;
     const findAuthor = book.author_name
@@ -22,39 +22,47 @@ export function displayData(response) {
       ? `${coverUrl}`
       : `https://picsum.photos/id/777/500/500`;
 
-    // Append Card
+    // Create card element
+    const makeSlide = document.createElement("div");
+    const makeCard = document.createElement("div");
+    const makeImg = document.createElement("img");
+    const makeContent = document.createElement("div");
+    const makeTitle = document.createElement("div");
+    const makeAuthor = document.createElement("p");
+    const makeBtn = document.createElement("button");
+
+    // Append card element
     const bookSection = document.getElementById("books-section");
 
-    const makeSlide = document.createElement("div");
+    // Append slide container
     makeSlide.className = "slide";
     bookSection.appendChild(makeSlide);
 
-    const makeCard = document.createElement("div");
+    // Append card container div
     makeCard.className = "card";
     makeSlide.appendChild(makeCard);
 
-    const makeImg = document.createElement("img");
+    // Append Img
     makeImg.className = "bk-cover";
     makeImg.src = coverImage;
     makeImg.alt = findTitle;
     makeCard.appendChild(makeImg);
 
-    const makeContent = document.createElement("div");
+    // Append content container div
     makeContent.className = "content";
     makeCard.appendChild(makeContent);
 
-    const makeTitle = document.createElement("div");
+    // Append title div
     makeTitle.className = "title";
     makeTitle.appendChild(document.createTextNode(findTitle));
     makeContent.appendChild(makeTitle);
 
-    const makeAuthor = document.createElement("p");
+    // Append author P
     makeAuthor.className = "author";
     makeAuthor.appendChild(document.createTextNode(findAuthor));
     makeContent.appendChild(makeAuthor);
 
     //Button open modal
-    const makeBtn = document.createElement("button");
     makeBtn.className = "modal-button";
     makeBtn.setAttribute("id", "open-button");
     makeBtn.appendChild(document.createTextNode("Learn More"));
@@ -67,19 +75,23 @@ export function displayData(response) {
       fetch(descriptionUrl)
         .then((response) => response.json())
         .then((data) => {
-          let description = "Non si lallera con i lalleri";
-          if (data) {
-            if (typeof data === "object") {
+          //Handling description
+          let description = "No description available";
+
+          if (data.description) {
+            if (typeof data.description === "object") {
               description = data.description.value || description;
-            } else if (typeof data === "string") {
+            } else if (typeof data.description === "string") {
               description = data.description || description;
             }
           }
-          modal.appendChild(document.createTextNode(description));
-          console.log(data.key);
-          console.log(data);
+          // Show description
+          modalParagraph.innerHTML = `${description}`;
+          modal.showModal();
+        })
+        .catch((error) => {
+          console.error(error);
         });
-      modal.showModal();
     });
   }
 }
