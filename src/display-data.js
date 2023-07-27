@@ -90,7 +90,7 @@ export function displayData(response) {
           modal.showModal();
         })
         .catch((error) => {
-          console.error(error);
+          console.log(error);
         });
     });
   }

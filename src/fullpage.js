@@ -1,5 +1,5 @@
 // Fulpage configuration object
-new fullpage("#fullpage", {
+const fullPageApi = new fullpage("#fullpage", {
   autoScrolling: true,
   scrollHorizontally: true,
   navigation: true,
@@ -10,4 +10,4 @@ new fullpage("#fullpage", {
   licenseKey: "gplv3-license",
 });
 
-export default fullpage();
+export default fullPageApi;

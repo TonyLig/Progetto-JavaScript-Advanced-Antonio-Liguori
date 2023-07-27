@@ -1,7 +1,7 @@
-import "./fullpage";
+import fullPageApi from "./fullpage";
 import "./style.css";
 import { displayData } from "./display-data";
-
+console.log(fullPageApi);
 // Element selection
 const searchInput = document.querySelector(".search-bar");
 const btnSearch = document.querySelector(".btn-search");
@@ -19,16 +19,16 @@ closeModal.addEventListener("click", () => {
 // Function to get the input
 function getInput(event) {
   event.preventDefault();
-  getData(searchInput.value);
+  getData(searchInput.value)
+    .then(displayData)
+    .then(() => fullPageApi.moveTo(2))
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 // Fetch API
 function getData(search) {
   const apiUrl = `https://openlibrary.org/search.json?q=${search}`;
-  fetch(apiUrl)
-    .then((response) => response.json())
-    .then(displayData)
-    .catch((error) => {
-      console.error(error);
-    });
+  return fetch(apiUrl).then((response) => response.json());
 }
