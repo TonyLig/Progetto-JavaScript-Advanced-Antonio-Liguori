@@ -203,6 +203,8 @@
   width: 200px;
   height: 140px;
   position: relative;
+  display: none;
+  margin-top: 1rem;
 }
 
 .loader:before,

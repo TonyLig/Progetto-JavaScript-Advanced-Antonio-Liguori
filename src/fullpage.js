@@ -5,9 +5,14 @@ const fullPageApi = new fullpage("#fullpage", {
   navigation: true,
   css3: true,
   loopHorizontal: true,
-  fitToSection: true,
+  fitToSection: false,
   keyboardScrolling: true,
   licenseKey: "gplv3-license",
+  credits: {
+    enabled: false,
+    label: "Made with fullPage.js",
+    position: "right",
+  },
 });
 
 export default fullPageApi;

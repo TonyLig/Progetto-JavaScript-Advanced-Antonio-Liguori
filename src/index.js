@@ -16,12 +16,12 @@ closeModal.addEventListener("click", () => {
   modal.close();
 });
 
-// Function to get the input
+// Function to get the input and manage the flow of the APP
 function getInput(event) {
   event.preventDefault();
   getData(searchInput.value)
     .then(displayData)
-    .then(() => fullPageApi.moveTo(2))
+    .then(showLoader)
     .catch((error) => {
       console.log(error);
     });
@@ -29,6 +29,17 @@ function getInput(event) {
 
 // Fetch API
 function getData(search) {
-  const apiUrl = `https://openlibrary.org/search.json?q=${search}`;
+  const apiUrl = `https://openlibrary.org/search.json?limit=10&q=${search}`;
   return fetch(apiUrl).then((response) => response.json());
+}
+
+// Show the loader and afterwards put the focus on the books
+function showLoader() {
+  const loader = document.getElementById("loader");
+  loader.style.display = "block";
+
+  setTimeout(function () {
+    loader.style.display = "none";
+    fullPageApi.moveTo(2);
+  }, 5000);
 }
