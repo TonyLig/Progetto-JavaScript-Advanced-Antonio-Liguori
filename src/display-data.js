@@ -90,7 +90,8 @@ export function displayData(response) {
           modal.showModal();
         })
         .catch((error) => {
-          console.log(error);
+          console.error(error.message);
+          alert(`Sorry something goes wrong, try again: ${error.message}`);
         });
     });
   }

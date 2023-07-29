@@ -5,7 +5,7 @@ console.log(fullPageApi);
 // Element selection
 const searchInput = document.querySelector(".search-bar");
 const btnSearch = document.querySelector(".btn-search");
-
+const cleanSection = document.getElementById("books-section");
 const modal = document.getElementById("modal");
 const closeModal = document.querySelector(".close-modal");
 
@@ -20,10 +20,12 @@ closeModal.addEventListener("click", () => {
 function getInput(event) {
   event.preventDefault();
   getData(searchInput.value)
+    .then((cleanSection.innerHTML = ""))
     .then(displayData)
     .then(showLoader)
     .catch((error) => {
-      console.log(error);
+      console.error(error.message);
+      alert(`Sorry something goes wrong, try again: ${error.message}`);
     });
 }
 
@@ -41,5 +43,6 @@ function showLoader() {
   setTimeout(function () {
     loader.style.display = "none";
     fullPageApi.moveTo(2);
+    document.querySelector(".search-bar").value = "";
   }, 5000);
 }

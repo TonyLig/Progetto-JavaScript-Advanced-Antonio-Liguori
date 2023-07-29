@@ -21,7 +21,6 @@
     />
   </head>
   <body>
-    <!-- Main containere -->
     <div id="fullpage">
       <!-- START hero section -->
       <div class="section hero-section">
@@ -44,7 +43,6 @@
           </datalist>
           <button class="btn-search" type="submit">Search</button>
         </form>
-
         <!-- START loader -->
         <div class="loader" id="loader">
           <div>
@@ -97,16 +95,14 @@
         <!-- END loader -->
       </div>
       <!-- END hero section -->
-
+      <!-- START modal -->
+      <dialog class="book-modal" id="modal">
+        <p class="text-modal"></p>
+        <button class="modal-button close-modal">Close</button>
+      </dialog>
+      <!-- END modal -->
       <!-- START books section -->
-      <div id="books-section" class="section">
-        <!-- START modal -->
-        <dialog class="book-modal" id="modal">
-          <p class="text-modal"></p>
-          <button class="modal-button close-modal">Close</button>
-        </dialog>
-        <!-- END modal -->
-      </div>
+      <div id="books-section" class="section"></div>
       <!-- END books section -->
     </div>
     <!-- FullPage CDN link js -->
