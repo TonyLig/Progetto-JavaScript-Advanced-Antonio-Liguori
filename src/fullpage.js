@@ -2,7 +2,7 @@
 const fullPageApi = new fullpage("#fullpage", {
   autoScrolling: true,
   scrollHorizontally: true,
-  navigation: true,
+  navigation: false,
   css3: true,
   loopHorizontal: true,
   fitToSection: false,

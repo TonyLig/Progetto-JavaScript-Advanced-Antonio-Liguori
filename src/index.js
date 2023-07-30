@@ -1,7 +1,7 @@
 import fullPageApi from "./fullpage";
 import "./style.css";
 import { displayData } from "./display-data";
-console.log(fullPageApi);
+
 // Element selection
 const searchInput = document.querySelector(".search-bar");
 const btnSearch = document.querySelector(".btn-search");
