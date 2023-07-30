@@ -4,6 +4,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -26,7 +27,10 @@ const config = {
       template: "index.html",
       inject: true,
     }),
-    new FaviconsWebpackPlugin("./src/img/open-book.png"),
+    new FaviconsWebpackPlugin("./src/img/book.png"),
+    new CopyPlugin({
+      patterns: [{ from: "./src/img", to: "assets" }],
+    }),
 
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
