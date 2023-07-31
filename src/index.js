@@ -1,6 +1,6 @@
-import fullPageApi from "./fullpage";
+import fullPageApi from "./fullpage.js";
 import "./style.css";
-import { displayData } from "./display-data";
+import { displayData } from "./display-data.js";
 
 // Element selection
 const searchInput = document.querySelector(".search-bar");

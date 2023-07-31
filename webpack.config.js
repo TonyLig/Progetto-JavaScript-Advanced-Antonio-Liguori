@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
-const isProduction = process.env.NODE_ENV == "production";
+const isProduction = process.env.NODE_ENV === "production";
 
 const stylesHandler = isProduction
   ? MiniCssExtractPlugin.loader
@@ -15,6 +15,7 @@ const stylesHandler = isProduction
 const config = {
   entry: "./src/index.js",
   output: {
+    publicPath: "/",
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
   },
@@ -28,6 +29,7 @@ const config = {
       inject: true,
     }),
     new FaviconsWebpackPlugin("./src/img/book.png"),
+    new MiniCssExtractPlugin(),
     new CopyPlugin({
       patterns: [{ from: "./src/img", to: "assets" }],
     }),
