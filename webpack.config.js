@@ -15,7 +15,6 @@ const stylesHandler = isProduction
 const config = {
   entry: "./src/index.js",
   output: {
-    publicPath: "/",
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
   },
